@@ -1,26 +1,40 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
 <?php
 
+//хедер
+include_once 'pages/header.php';
 
 
-
-for( $i = 0;  $i <= 5; $i++  ) {
-
-    switch ($i) {
-        case 1:
-            case 2:
-                echo '<br>' . $i;
-            break;
-        case 3:
-            break;
-    }
-}
+//область меню
+include_once 'pages/left_menu.php';
 
 
+//основной контент
+include_once 'pages/content.php';
 
 
+//правая колонка
+include_once 'pages/right_column.php';
 
 
-
-
-
+//футер
+include_once 'pages/footer.php';
 ?>
+
+
+
+</body>
+</html>
+
