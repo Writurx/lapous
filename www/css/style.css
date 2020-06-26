@@ -1,5 +1,7 @@
-html {
-    background-color: red;
-    font-weight: 700;
-    color: blue;
+li {
+    list-style-type: none ; /* Убираем маркеры у списка */
+}
+
+li:before {
+    content: " - "; /* Добавляем в качестве маркера символ */
 }
