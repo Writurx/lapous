@@ -1,0 +1,85 @@
+Как запустить MySQL консоль
+Запустить консоль можно через проводник windows, найдя в папке с MySQL утилиту mysql.exe. Обычно она находится по адресу: [путь до папки]\mysql\bin\mysql.exe
+
+В случае использования денвера, MySQL консоль, стоит искать в этом направлении:
+C:\WebServer\usr\local\mysql\bin\mysql.exe
+
+
+Кроме проводника windows, можно использовать командную строку:
+
+Запустите cmd.exe
+Напишите полный путь до файла mysql.exe
+Нажмите enter
+Выполните туже команду с добавочными параметрами, указывающими данные для авторизации.
+
+C:\WebServer\usr\local\mysql-5.1\bin\mysql.exe –u root –p
+
+Если все сделано верно, вы получите сообщение "Добро пожаловать в MySQL консоль…"
+
+Убедиться в том, что вы успешно подключены к серверу БД, можно введя команду show databases;. В результате ее выполнения будет выведен перечень присутствующих баз данных на сервере.
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| adress             |
+| lapous             |
+| lisson             |
+| mysql              |
+| performance_schema |
+| s1323_oskar        |
+| s1323_vetbaza      |
+| sys                |
++--------------------+
+9 rows in set (0.00 sec)
+mysql>
+
+
+В качестве эксперимента вы можете попробовать создать базу test222, с помощью команды:
+
+mysql> create database test222;
+Query OK, 1 row affected (0.00 sec)
+mysql>
+
+
+Попробуем выбрать одну из БД и посмотреть список таблиц в ней:
+ - Использовать БД test222
+mysql> use test222;
+Database changed
+mysql>
+
+ - Посмотреть список таблиц в ней:
+mysql> show tables;
+Empty set (0.00 sec)
+ - вернула пусто - таблиц  БД test222 нет!!!
+
+
+
+Теперь давайте создадим в базе test222 таблицу order.
+mysql> create table test222.order (`id` int(11),`content` varchar(255));
+ - Query OK, 0 rows affected (0.02 sec)
+
+
+mysql> show tables;
++-------------------+
+| Tables_in_test222 |
++-------------------+
+| order             |
++-------------------+
+1 row in set (0.00 sec)
+ - вывела, что в БД test222 есть пустая таблица order
+
+
+
+Dывести список колонок в таблице:
+
+mysql> show columns from test222.order;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| id      | int(11)      | YES  |     | NULL    |       |
+| content | varchar(255) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql>

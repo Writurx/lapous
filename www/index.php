@@ -10,6 +10,7 @@ $cssVersion = '3.4.2'; ?>
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css?v=<?php echo $cssVersion; ?>" type="text/css">
+    <script src="/js/script.js"></script>
 </head>
 <body>
 
